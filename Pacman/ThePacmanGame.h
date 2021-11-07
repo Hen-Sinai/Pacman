@@ -7,19 +7,27 @@
 #include "Wall.h"
 #include "Ghost.h"
 #include "BreadCrumbs.h"
+#include "Board.h"
 
 class ThePacmanGame {
 	enum { ESC = 27 };
 	Pacman pacman;
 	Ghost ghosts[2];
-	Wall walls[200];
-	BreadCrumb breadCrumbs[100];
-	int lives = 3, points = 0;
-
+	//ADDED
+	Board board;
+	//Position pboard[70][20];
+	int lives, points, ghostMove;
 
 public:
 	void init();
+	void initPositions();
+	void initPacmanData();
 	void run();
+	void printData();
+	void managePacmanMove(int dir);
+	void moveGhosts();
+	void pacmanHitGhost();
+	void pacmanHitBreadCrumb();
 };
 
 #endif

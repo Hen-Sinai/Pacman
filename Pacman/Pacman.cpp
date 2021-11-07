@@ -3,13 +3,12 @@
 
 void Pacman::move()
 {
-	for (int i = 1; i <= speed; i++)
+	//for (int i = 1; i <= speed; i++)
 	{
 		position.draw(' ');
 		position.move(direction);
 		position.draw(figure);
-		//לבדוק התנגשויות
-		//לבדוק האם הגענו לקצה ולא קיים קיר בשני הצדדים
+		//Sleep(500);
 	}
 }
 
@@ -29,4 +28,17 @@ int Pacman::getDirection(char key)
 		return Directions::RIGHT;
 	else
 		return -1;
+}
+
+bool Pacman::canMove(Board board)
+{
+
+	if ((direction == Directions::RIGHT && board.getBoard()[position.getY()][position.getX() + 1] == '#') ||
+		(direction == Directions::LEFT && board.getBoard()[position.getY()][position.getX() - 1] == '#') ||
+		(direction == Directions::UP && board.getBoard()[position.getY() - 1][position.getX()] == '#') ||
+		(direction == Directions::DOWN && board.getBoard()[position.getY() + 1][position.getX()] == '#'))
+		return false;
+
+	return true;
+
 }

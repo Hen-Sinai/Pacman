@@ -11,16 +11,16 @@ void Position::move(int dir)
 	switch (dir) {
 
 	case Directions::UP: // UP
-		++y;
-		break;
-	case Directions::DOWN: // DOWN
 		--y;
 		break;
+	case Directions::DOWN: // DOWN
+		++y;
+		break;
 	case Directions::LEFT: // LEFT
-		++x;
+		--x;
 		break;
 	case Directions::RIGHT: // RIGHT
-		--x;
+		++x;
 		break;
 	}
 }

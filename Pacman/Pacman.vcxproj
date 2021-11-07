@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
     <ClInclude Include="BreadCrumbs.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Directions.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="BreadCrumbs.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="io_utils.cpp" />

@@ -5,18 +5,18 @@ using namespace std;
 #include "Position.h"
 #include "io_utils.h"
 #include "Directions.h"
+#include "Board.h"
 
 class Ghost
 {
 	Position position; //need to initilize
-	const char figure = '$';
+	char figure = '$';
 	int speed = 1;
 	int direction = rand() % 4 + 1;
 
 	// COLOR
 public:
-	void move();
-	//תהיה פונקציה שבודקת התנגשות בקיר ואז מגרילה כיוון ושולחת אל סט דיירשין
+	void move(Board board);
 	void setPosition(int x, int y)
 	{
 		position.setPosition(x, y);
@@ -25,5 +25,21 @@ public:
 	{
 		direction = dir;
 	}
+	//ADDED
+	int getX()
+	{
+		return position.getX();
+	}
+	int getY()
+	{
+		return position.getY();
+	}
+	bool canMove(Board board);
+
+	Position getPosition()
+	{
+		return position;
+	}
+
 };
 #endif

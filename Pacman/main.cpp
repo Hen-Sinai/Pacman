@@ -22,10 +22,10 @@ void main()
 
 		}
 
-		
+
 		else if (chose == 8)
 		{
-			
+
 			cout << "The game instructions Are:" << endl << "Playing Pacman is easy to learn and hard to master (like all classic games)." << endl;
 			cout << "Simply score as many points as you can eating the small _____ all around the maze, and avoid the ghosts." << endl;
 			cout << "The game keys Are:" << endl;
