@@ -27,13 +27,15 @@ public:
 	}
 	void printBoard();
 	void initBoard();
-
-	Board() {
-		board = new char* [ROWS];
-
+	/*
+	~Board() {
 		for (int h = 0; h < ROWS; h++)
-			board[h] = new char[COLS];
+			delete[] board[h];
+
+		delete[] board;
 	}
+	*/
+	
 };
 
 #endif
