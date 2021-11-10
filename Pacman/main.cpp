@@ -3,26 +3,24 @@ using namespace std;
 
 #include "ThePacmanGame.h"
 
-void main()
+int main()
 {
 	ThePacmanGame game;
 	int chose;
+	//char chose;
 	do {
 		cout << "Please select one of the options bellow:" << endl;
 		cout << "(1) Start a new game\n(8) Present instructions and keys\n(9) EXIT" << endl;
 
-		cin >> chose;
+		cin >> chose; //לשנות לgetc
+		//chose = _getch();
 
 		if (chose == 1)
 		{
 			clear_screen();
 			game.init();
 			game.run();
-
-
 		}
-
-
 		else if (chose == 8)
 		{
 

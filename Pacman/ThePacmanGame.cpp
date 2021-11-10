@@ -49,7 +49,7 @@ void ThePacmanGame::pacmanHitGhost()
 
 void ThePacmanGame::pacmanHitBreadCrumb()
 {
-	if (board.getBoard()[pacman.getY()][pacman.getX()] == '*')
+	if (board.getCharInPosition(pacman.getY(), pacman.getX()) == '*')
 	{
 		points++;
 		board.setBoard(pacman.getY(), pacman.getX(), ' ');
@@ -59,7 +59,7 @@ void ThePacmanGame::pacmanHitBreadCrumb()
 //ADDED
 void ThePacmanGame::init()
 {
-	board.initBoard(); // upside down... x and y
+	//board.initBoard(); // upside down... x and y
 	initPositions();
 }
 
@@ -94,19 +94,21 @@ void ThePacmanGame::run()
 				dir = pacman.getDirection(key);
 				if (dir != -1)
 					pacman.setDirection(dir);
-				gotoxy(0, 20);
-				cout << "                                                        " << endl;
 			}
 			else
-			{
-				gotoxy(0, 20);
+				paused = !paused;
+
+			gotoxy(0, 20);
+			if (paused)
 				cout << "-------------------- Game Paused ---------------------" << endl;
-			}
+			else
+				cout << "                                                        " << endl;
+
 		}
-		if (key != ESC)
+		if (!paused)
 		{
 			managePacmanMove(dir);
-			
+
 			moveGhosts();
 			ghostMove++;
 			if (ghostMove == 20)

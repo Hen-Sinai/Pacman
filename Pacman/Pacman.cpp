@@ -3,13 +3,9 @@
 
 void Pacman::move()
 {
-	//for (int i = 1; i <= speed; i++)
-	{
-		position.draw(' ');
-		position.move(direction);
-		position.draw(figure);
-		//Sleep(500);
-	}
+	position.draw(' ');
+	position.move(direction);
+	position.draw(figure);
 }
 
 
@@ -33,10 +29,10 @@ int Pacman::getDirection(char key)
 bool Pacman::canMove(Board board)
 {
 
-	if ((direction == Directions::RIGHT && board.getBoard()[position.getY()][position.getX() + 1] == '#') ||
-		(direction == Directions::LEFT && board.getBoard()[position.getY()][position.getX() - 1] == '#') ||
-		(direction == Directions::UP && board.getBoard()[position.getY() - 1][position.getX()] == '#') ||
-		(direction == Directions::DOWN && board.getBoard()[position.getY() + 1][position.getX()] == '#'))
+	if ((direction == Directions::RIGHT && board.getCharInPosition(position.getY(), position.getX() + 1) == '#') ||
+		(direction == Directions::LEFT && board.getCharInPosition(position.getY(), position.getX() - 1) == '#') ||
+		(direction == Directions::UP && board.getCharInPosition(position.getY() - 1, position.getX()) == '#') ||
+		(direction == Directions::DOWN && board.getCharInPosition(position.getY() + 1, position.getX()) == '#'))
 		return false;
 
 	return true;

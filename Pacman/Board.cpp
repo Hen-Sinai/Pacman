@@ -1,5 +1,9 @@
 #include "Board.h"
 
+Board::Board(){
+	initBoard();
+}
+
 void Board::printBoard()
 {
 	gotoxy(0, 0);
@@ -9,13 +13,10 @@ void Board::printBoard()
 			cout << board[i][j];
 
 		cout << endl;
-
 	}
-
 }
 
-void Board::initBoard()
-{
+void Board::initBoard() {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -34,5 +35,4 @@ void Board::initBoard()
 		}
 
 	}
-
 }

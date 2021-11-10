@@ -13,10 +13,9 @@ class ThePacmanGame {
 	enum { ESC = 27 };
 	Pacman pacman;
 	Ghost ghosts[2];
-	//ADDED
 	Board board;
-	//Position pboard[70][20];
 	int lives, points, ghostMove;
+	bool paused = false;
 
 public:
 	void init();

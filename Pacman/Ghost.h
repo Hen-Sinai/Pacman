@@ -11,7 +11,6 @@ class Ghost
 {
 	Position position; //need to initilize
 	char figure = '$';
-	int speed = 1;
 	int direction = rand() % 4 + 1;
 
 	// COLOR

@@ -6,20 +6,14 @@ using namespace std;
 
 class Board
 {
-	const int ROWS = 20;
-	const int COLS = 70;
-	char** board;
+	enum { COLS = 70, ROWS = 20 };
+	char board[ROWS][COLS];
 public:
-	Board() {
-		board = new char* [ROWS];
+	Board();
 
-		for (int h = 0; h < ROWS; h++)
-			board[h] = new char[COLS];
-	}
-
-	char** getBoard()
+	char getCharInPosition(int x, int y) 
 	{
-		return board;
+		return board[x][y];
 	}
 	void setBoard(int x, int y, char c)
 	{
@@ -27,15 +21,6 @@ public:
 	}
 	void printBoard();
 	void initBoard();
-	/*
-	~Board() {
-		for (int h = 0; h < ROWS; h++)
-			delete[] board[h];
-
-		delete[] board;
-	}
-	*/
-	
 };
 
 #endif

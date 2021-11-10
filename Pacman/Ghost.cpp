@@ -3,7 +3,7 @@
 
 void Ghost::move(Board board)
 {
-	if (board.getBoard()[position.getY()][position.getX()] == '*')
+	if (board.getCharInPosition(position.getY(), position.getX())== '*')
 		position.draw('*');
 	else
 		position.draw(' ');
@@ -13,10 +13,10 @@ void Ghost::move(Board board)
 
 bool Ghost::canMove(Board board)
 {
-	if ((direction == Directions::RIGHT && board.getBoard()[position.getY()][position.getX() + 1] == '#') ||
-		(direction == Directions::LEFT && board.getBoard()[position.getY()][position.getX() - 1] == '#') ||
-		(direction == Directions::UP && board.getBoard()[position.getY() - 1][position.getX()] == '#') ||
-		(direction == Directions::DOWN && board.getBoard()[position.getY() + 1][position.getX()] == '#'))
+	if ((direction == Directions::RIGHT && board.getCharInPosition(position.getY(), position.getX() + 1) == '#') ||
+		(direction == Directions::LEFT && board.getCharInPosition(position.getY(), position.getX() - 1) == '#') ||
+		(direction == Directions::UP && board.getCharInPosition(position.getY() - 1, position.getX()) == '#') ||
+		(direction == Directions::DOWN && board.getCharInPosition(position.getY() + 1, position.getX()) == '#'))
 		return false;
 
 	return true;

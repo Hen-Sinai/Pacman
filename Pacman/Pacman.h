@@ -11,7 +11,6 @@ class Pacman
 {
 	Position position{ 35,10 };
 	const char figure = '@';
-	int speed = 2;
 	int direction = Directions::STAY;
 	int lives = 3;
 	// COLOR
